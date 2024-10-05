@@ -1,1 +1,27 @@
-
+# requirements.txt
+#
+# Purpose: This file lists the Python packages required for this project.
+# These packages are necessary for the functionality and performance of the application.
+#
+# How to Use:
+# To install the required packages, run the following command in your terminal:
+# pip install -r requirements.txt
+#
+# How to Add Packages:
+# If you need to add a new package:
+# 1. Specify the package name and version (if applicable) in the same format as the existing lines.
+# 2. Save the changes to this file.
+# 3. After adding a new package, consider running the command above to ensure the environment is up to date.
+#
+# Example: To add 'matplotlib', include the following line:
+# matplotlib==3.4.3
+#
+#
+#
+#
+#
+#
+# If you have any questions, let me know :) !
+#                              
+#                    - AR (Alexia Rendon)
+#
