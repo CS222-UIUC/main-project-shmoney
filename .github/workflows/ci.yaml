@@ -44,6 +44,13 @@ jobs:
       run: |
         black --check .
 
+    - name: Check for unused dependencies
+      run: |
+      pip-check
+
+    - name: Run tests
+      run: pytest
+
   build-macos:
     runs-on: macos-latest
     steps:
@@ -70,3 +77,10 @@ jobs:
     - name: Check code formatting with black
       run: |
         black --check .
+
+    - name: Check for unused dependencies
+      run: |
+      pip-check
+
+    - name: Run tests
+      run: pytest
