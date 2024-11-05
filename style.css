@@ -1,0 +1,137 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Background */
+body {
+    background-color: #e6e0f3;
+}
+
+/* Header Styling */
+header {
+    background-color: #161442;
+    padding: 1rem;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar h1 {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.navbar nav a {
+    margin: 0 1rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.navbar nav a:hover {
+    text-decoration: underline;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    margin-left: 0.5rem;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+/* Main Content Styling */
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Styling */
+.stock-graph, .stock-prediction, .news-articles {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Image Placeholders */
+.stock-graph img, .stock-prediction img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* News Articles Styling */
+.news-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.news-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.news-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    margin-right: 1rem;
+}
+
+.news-item p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.news-item p:first-of-type {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar h1 {
+        font-size: 1.2rem;
+    }
+    
+    .stock-graph img, .stock-prediction img {
+        width: 100%;
+    }
+    
+    .news-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
