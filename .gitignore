@@ -1,0 +1,6 @@
+.env
+keras_model.h5
+main.py
+new_model.ipynb
+random_forest_model.joblib
+random_forest.ipynb
