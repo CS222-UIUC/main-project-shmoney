@@ -4,3 +4,4 @@ main.py
 new_model.ipynb
 random_forest_model.joblib
 random_forest.ipynb
+env/
