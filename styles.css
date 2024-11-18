@@ -1,0 +1,57 @@
+/* Light Theme */
+.light-theme {
+    background-color: #F5F5F5;
+    color: #333333;
+    font-family: 'Arial', sans-serif;
+}
+
+.light-theme .stButton>button {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.light-theme .stButton>button:hover {
+    background-color: #45A049;
+}
+
+.light-theme h1, .light-theme h2 {
+    color: #4CAF50;
+}
+
+.light-theme [data-testid="stSidebar"] {
+    background-color: #EFEFEF;
+    border-right: 2px solid #DDDDDD;
+}
+
+/* Dark Theme */
+.dark-theme {
+    background-color: #1E1E1E;
+    color: #FFFFFF;
+    font-family: 'Arial', sans-serif;
+}
+
+.dark-theme .stButton>button {
+    background-color: #333333;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.dark-theme .stButton>button:hover {
+    background-color: #555555;
+}
+
+.dark-theme h1, .dark-theme h2 {
+    color: #4CAF50;
+}
+
+.dark-theme [data-testid="stSidebar"] {
+    background-color: #333333;
+    border-right: 2px solid #555555;
+}
