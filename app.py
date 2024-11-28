@@ -62,7 +62,7 @@ num_future_days = st.sidebar.slider(
 )
 
 # Load Keras Model without compiling to avoid warning
-model_path = "/Users/aaditroychowdhury/Documents/CS 222/Main branch/main-project-shmoney/keras_model.h5"
+model_path = os.getenv("MODEL_PATH")
 model = load_model(model_path, compile=False)
 
 # Run button
