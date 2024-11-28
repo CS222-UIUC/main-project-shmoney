@@ -71,9 +71,6 @@ if st.sidebar.button("Run"):
         # Fetch stock data
         df = yf.download(ticker, start=start_date, end=end_date)
 
-        # Fetch stock data
-        df = yf.download(ticker, start=start_date, end=end_date)
-
         # Reset index to add Date column
         df.reset_index(inplace=True)
 
