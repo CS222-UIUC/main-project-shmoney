@@ -18,13 +18,40 @@
 #
 #
 #
-#
-#
-#
-# If you have any questions, let me know :) !
-#                              
-#                    - AR (Alexia Rendon)
-#
+
+
 black==23.1.0
 flake8==6.0.0
 pytest==7.2.0
+
+# -----------------------------------------------------------------
+
+# numpy==1.22.4
+# pandas==1.5.3
+# matplotlib==3.6.3
+# seaborn==0.12.2
+# yfinance==0.2.18
+# streamlit==1.26.0
+# keras==2.11.0
+# scikit-learn==1.2.2
+# newsapi-python==0.2.6
+# prophet==1.1
+# vaderSentiment==3.3.2
+# python-dotenv==1.0.0
+# os
+# python==3.10.15
+
+# -----------------------------------------------------------------
+
+numpy
+pandas
+matplotlib
+seaborn
+yfinance
+streamlit
+keras
+scikit-learn
+newsapi-python
+prophet
+vaderSentiment
+python-dotenv
