@@ -2,6 +2,8 @@
 body {
     font-family: 'Arial', sans-serif;
     transition: background-color 0.5s ease, color 0.5s ease;
+    margin: 0;
+    padding: 0;
 }
 
 /* Light Theme */
@@ -39,6 +41,24 @@ body {
     color: #333333;
 }
 
+.light-theme input[type="text"] {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.light-theme input[type="text"]:hover {
+    border-color: #4CAF50;
+}
+
+.light-theme input[type="text"]:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.8);
+}
+
 /* Dark Theme */
 .dark-theme {
     background: linear-gradient(to bottom, #1E1E1E, #333333);
@@ -74,6 +94,24 @@ body {
     color: #FFFFFF;
 }
 
+.dark-theme input[type="text"] {
+    border: 1px solid #555555;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-theme input[type="text"]:hover {
+    border-color: #777777;
+}
+
+.dark-theme input[type="text"]:focus {
+    outline: none;
+    border-color: #777777;
+    box-shadow: 0 0 5px rgba(119, 119, 119, 0.8);
+}
+
 /* Sidebar Link Hover Effects */
 .light-theme [data-testid="stSidebar"] a:hover,
 .dark-theme [data-testid="stSidebar"] a:hover {
@@ -98,3 +136,15 @@ body {
     padding: 5px;
 }
 
+/* Table Row Hover */
+table tr:hover {
+    background-color: rgba(192, 192, 192, 0.9);
+    transition: background-color 0.3s ease;
+}
+
+/* Chart Hover Effect */
+.stPlotlyChart:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
