@@ -1,57 +1,100 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
 /* Light Theme */
 .light-theme {
+    background: linear-gradient(to bottom, #FFFFFF, #EFEFEF);
+    color: #333333;
+}
+
+.light-theme [data-testid="stSidebar"] {
     background-color: #F5F5F5;
     color: #333333;
-    font-family: 'Arial', sans-serif;
 }
 
 .light-theme .stButton>button {
     background-color: #4CAF50;
     color: white;
-    border-radius: 5px;
-    padding: 8px 16px;
-    font-size: 14px;
-    transition: background-color 0.3s;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 .light-theme .stButton>button:hover {
-    background-color: #45A049;
+    background-color: #45a049;
 }
 
-.light-theme h1, .light-theme h2 {
-    color: #4CAF50;
-}
-
-.light-theme [data-testid="stSidebar"] {
-    background-color: #EFEFEF;
-    border-right: 2px solid #DDDDDD;
+.light-theme .stPlotlyChart {
+    background-color: #FFFFFF;
+    color: #333333;
 }
 
 /* Dark Theme */
 .dark-theme {
-    background-color: #1E1E1E;
+    background: linear-gradient(to bottom, #1E1E1E, #333333);
     color: #FFFFFF;
-    font-family: 'Arial', sans-serif;
-}
-
-.dark-theme .stButton>button {
-    background-color: #333333;
-    color: white;
-    border-radius: 5px;
-    padding: 8px 16px;
-    font-size: 14px;
-    transition: background-color 0.3s;
-}
-
-.dark-theme .stButton>button:hover {
-    background-color: #555555;
-}
-
-.dark-theme h1, .dark-theme h2 {
-    color: #4CAF50;
 }
 
 .dark-theme [data-testid="stSidebar"] {
-    background-color: #333333;
-    border-right: 2px solid #555555;
+    background-color: #2E2E2E;
+    color: #FFFFFF;
 }
+
+.dark-theme .stButton>button {
+    background-color: #555555;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.dark-theme .stButton>button:hover {
+    background-color: #777777;
+}
+
+.dark-theme .stPlotlyChart {
+    background-color: #1E1E1E;
+    color: #FFFFFF;
+}
+
+/* Sidebar Link Hover Effects */
+.light-theme [data-testid="stSidebar"] a:hover,
+.dark-theme [data-testid="stSidebar"] a:hover {
+    text-decoration: underline;
+    color: #FF5722;
+}
+
+/* Highlight Selected Sidebar Option */
+.light-theme [data-testid="stSidebar"] .selected {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.dark-theme [data-testid="stSidebar"] .selected {
+    background-color: #555555;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px;
+}
+
