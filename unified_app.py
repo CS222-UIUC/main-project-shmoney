@@ -1,20 +1,21 @@
 import streamlit as st
 
-# Load custom CSS
+# Load CSS file we created
 with open("styles.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-# Light/Dark Mode Toggle
-if "theme" not in st.session_state:
-    st.session_state["theme"] = "light"
+# Light/Dark Mode Selection
+theme_selection = st.sidebar.selectbox("Select Theme:", ["Dark Mode", "Light Mode"])
 
-if st.sidebar.button("Toggle Theme"):
-    st.session_state["theme"] = "dark" if st.session_state["theme"] == "light" else "light"
+# Determine the theme class based on selection
+theme_class = "dark-theme" if theme_selection == "Dark Mode" else "light-theme"
 
-theme_class = "dark-theme" if st.session_state["theme"] == "dark" else "light-theme"
+
 st.markdown(f'<div class="{theme_class}">', unsafe_allow_html=True)
 
-# Tabs for Navigation
+st.markdown("<h1 style='text-align: center; font-size: 3em;'>Welcome to the Stock Price Prediction App</h1>", unsafe_allow_html=True)
+
+
 tabs = st.tabs(["Comprehensive Analysis", "Stock Prediction", "Forecast"])
 with tabs[0]:
     exec(open("app.py").read())
