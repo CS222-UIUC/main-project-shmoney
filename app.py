@@ -17,7 +17,10 @@ import os
 load_dotenv()
 
 # Initialize NewsAPI
-newsapi = NewsApiClient(api_key=os.getenv("NEWS_API_KEY"))
+NEWS_API_KEY = "f501f61f9d3449f885ffaf97eb23c506"
+
+# Initialize NewsAPI with the defined API key
+newsapi = NewsApiClient(api_key=NEWS_API_KEY)
 
 
 # Function to fetch news sentiment and articles (cached)
@@ -62,8 +65,19 @@ num_future_days = st.sidebar.slider(
 )
 
 # Load Keras Model without compiling to avoid warning
-model_path = "/Users/aaditroychowdhury/Documents/CS 222/Main branch/main-project-shmoney/keras_model.h5"
+# Correct Windows-style path
+#model_path = r"C:\Users\aksah\OneDrive\Documents\CS222\main-project-shmoney\keras_model.h5"
+# Fallback to a default value if MODEL_PATH environment variable is not set
+model_path = os.getenv("MODEL_PATH", r"C:\Users\aksah\OneDrive\Documents\CS222\main-project-shmoney\keras_model.h5")
+
+# Check if the file exists
+if not os.path.exists(model_path):
+    raise FileNotFoundError(f"Model file not found at the path: {model_path}")
+
+# Load the Keras model
 model = load_model(model_path, compile=False)
+
+# Check if the file exists
 
 # Run button
 if st.sidebar.button("Run"):

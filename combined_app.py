@@ -7,7 +7,7 @@ from keras.models import load_model
 import streamlit as st
 from sklearn.preprocessing import MinMaxScaler
 import joblib
-
+import os
 
 start = '2010-01-01'
 end = '2024-10-31'
@@ -44,7 +44,10 @@ testing = pd.DataFrame(df['Close'][int(len(df) * 0.7):int(len(df))])
 scaler = MinMaxScaler(feature_range=(0,1))
 training_array = scaler.fit_transform(training)
 
-model = load_model('/Users/aaditroychowdhury/Documents/CS 222/Main branch/main-project-shmoney/keras_model.h5')
+model_path = r"C:\Users\aksah\OneDrive\Documents\CS222\main-project-shmoney\keras_model.h5"
+if not os.path.exists(model_path):
+    raise FileNotFoundError(f"Model file not found at: {model_path}")
+model = load_model(model_path, compile=False)
 
 
 past_100_days = training.tail(100)
