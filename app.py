@@ -63,7 +63,7 @@ st.sidebar.markdown(
     }
     </style>
     <div class="sidebar-logo">
-        <img src="blob:https://manage.wix.com/47150275-e26e-445a-b445-5c12f8e63b43" alt="FitLyfe Logo">
+        <img src="blob:https://manage.wix.com/47150275-e26e-445a-b445-5c12f8e63b43" alt="shmoney Logo">
     </div>
     """,
     unsafe_allow_html=True,
