@@ -17,7 +17,7 @@ import os
 load_dotenv()
 
 # Initialize NewsAPI
-newsapi = NewsApiClient(api_key="83b2866a355a422790cb2e60910e165e")
+newsapi = NewsApiClient(api_key=os.getenv("NEWS_API_KEY"))
 
 
 # Function to fetch news sentiment and articles (cached)
