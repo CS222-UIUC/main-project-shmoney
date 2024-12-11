@@ -64,11 +64,7 @@ page = st.sidebar.radio("Go to", ["Stock Data & Sentiment Analysis", "Moving Ave
 
 
 # Load Keras Model without compiling to avoid warning
-model_path = os.getenv("MODEL_PATH", r"C:\Users\arend\OneDrive\Desktop\cs222\main-project-shmoney\keras_model.h5")
-
-# Check if the file exists
-if not os.path.exists(model_path):
-    raise FileNotFoundError(f"Model file not found at the path: {model_path}")
+model_path = os.getenv("MODEL_PATH")
 
 # Load the Keras model
 model = load_model(model_path, compile=False)
