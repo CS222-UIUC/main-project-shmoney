@@ -17,8 +17,7 @@ import os
 load_dotenv()
 
 # Initialize NewsAPI
-
-newsapi = NewsApiClient(api_key="NEWS_API_KEY")
+newsapi = NewsApiClient(api_key="83b2866a355a422790cb2e60910e165e")
 
 
 # Function to fetch news sentiment and articles (cached)
@@ -63,29 +62,40 @@ num_future_days = st.sidebar.slider(
 )
 page = st.sidebar.radio("Go to", ["Stock Data & Sentiment Analysis", "Moving Average & Keras Model Predictions", "Prophet Model & Future Predictions"])
 
+
 # Load Keras Model without compiling to avoid warning
-model_path = os.getenv("MODEL_PATH")
+model_path = os.getenv("MODEL_PATH", r"C:\Users\arend\OneDrive\Desktop\cs222\main-project-shmoney\keras_model.h5")
+
+# Check if the file exists
+if not os.path.exists(model_path):
+    raise FileNotFoundError(f"Model file not found at the path: {model_path}")
+
+# Load the Keras model
 model = load_model(model_path, compile=False)
 
-# Run button
-if st.sidebar.button("Run"):
-    with st.spinner("Fetching data and performing analysis..."):
+# Check if the file exists
+
+        # Fetch stock data (cached to prevent repeated downloads)
+@st.cache_data
+def fetch_stock_data(ticker, start_date, end_date):
+           return yf.download(ticker, start=start_date, end=end_date)
+
         # Fetch stock data
-        df = yf.download(ticker, start=start_date, end=end_date)
+df = fetch_stock_data(ticker, start_date, end_date)
 
         # Reset index to add Date column
-        df.reset_index(inplace=True)
+df.reset_index(inplace=True)
 
         # Ensure Date column exists and is in datetime format
-        if "Date" not in df.columns:
+if "Date" not in df.columns:
             raise KeyError("The 'Date' column is missing from the DataFrame.")
 
         # Display stock data summary
-        st.subheader(f"Stock Data for {ticker}")
-        st.write(df.describe())
+st.subheader(f"Stock Data for {ticker}")
+st.write(df.describe())
 
         # Sentiment Analysis
-        if page == "Stock Data & Sentiment Analysis":
+if page == "Stock Data & Sentiment Analysis":
             st.subheader("News Sentiment Analysis")
             articles_info = fetch_news_sentiment(ticker)
 
@@ -159,7 +169,7 @@ if st.sidebar.button("Run"):
             # Ensure the index is reset to include a Date column if necessary
             if "Date" not in df.columns:
                 df.reset_index(inplace=True)
-        elif page == "Moving Average & Keras Model Predictions":
+elif page == "Moving Average & Keras Model Predictions":
             # Moving Averages
             st.subheader("Moving Averages (100 & 200 Days)")
             ma100 = df["Close"].rolling(100).mean()
@@ -239,7 +249,7 @@ if st.sidebar.button("Run"):
             st.pyplot(fig2)
 
             # ------------------------------------------------------------------------------------------
-        elif page == "Prophet Model & Future Predictions":
+elif page == "Prophet Model & Future Predictions":
             # Use Prophet for future prediction
 
             # Prepare data for Prophet
